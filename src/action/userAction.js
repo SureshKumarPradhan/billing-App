@@ -3,7 +3,7 @@ import axios from "axios";
 export const startLogin = (formdata, toHomePage) => {
   return (dispatch) => {
     axios
-      .post(`http://dct-billing-app.herokuapp.com/api/users/login`, formdata)
+      .post(`https://dct-billing-app.herokuapp.com/api/users/login`, formdata)
       .then((res) => {
         if (res.data.errors) {
           dispatch(loginError(res.data.errors));
