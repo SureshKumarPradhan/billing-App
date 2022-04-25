@@ -1,0 +1,31 @@
+.bills{
+    height: 85vh;
+}
+.billdate select{
+    font-size: 2rem;
+}
+.billdate input{
+    font-size: 2rem;
+   
+}
+.filter_btn{
+    margin-top: -10px;
+}
+.back{
+    margin-right: 5px;
+}
+.showbill_body{
+    height: 85vh;
+}
+.showbill
+   {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid gray;
+    padding: 20px;
+    box-shadow: 5px 10px 5px gray;
+    margin-top: 3%;
+}

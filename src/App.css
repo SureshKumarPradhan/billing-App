@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.error{
+    color: red;
+}
+#root{
+    background-color: whitesmoke;
+}
+html{
+    font-size: 10px;
+}
+.navbar .brand{
+    font-size: 2rem;
+    font-family: 'Cursive	';
+    color:lightcoral;
+    margin-left: 20px;
+}
+.navbar .nav_ul{
+    font-size: 3rem;
+    text-decoration: none;
+}
+.navbar .nav_ul a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Serif	';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* for menu bar */
+
+#menu{
+    margin-right: 20px;
+}
+.bar1, .bar2, .bar3 {
+    width: 25px;
+    height: 2px;
+    background-color: #1a1a1d;
+    margin: 6px 0;
+    transition: 0.4s;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
   }
-  to {
-    transform: rotate(360deg);
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
   }
+
+  /* Home component */ 
+
+  .home {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      background-color: whitesmoke;
+      height: 92vh;
+
+  }
+  .home_body{  
+    position:absolute ;
+    top: 30%;
+  }
+  .home_body img{
+     max-width: 60rem;
+     max-height: 60rem;
+  }
+  /* Register */
+  .form{
+      font-size: 2rem;
+      border: 1px solid gray;
+      border-radius: 10px;
+      box-shadow: 5px 10px 5px gray ;
+      font-family: 'Serif';
+      background-image: linear-gradient(to right, lightblue , lightgreen);
+  }
+  .form .input{
+      font-size: 2rem;
+  } 
+  .form button{
+      font-size: 2rem;
+  }
+  .form button a{
+    color: #fff;
+    text-decoration: none;
+}
+@media screen and (max-width:516px){
+    html{
+        font-size: 4px;
+    } 
+} 
+@media screen and  (max-width: 1000px){
+    .navbar .nav_ul{
+       font-size: 2rem;
+    }
+    
+}
+@media screen and  (max-width: 822px){
+    .navbar .nav_ul {
+       display: flex;
+       align-items: center;
+       text-align: justify;  
+    }
 }

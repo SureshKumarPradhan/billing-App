@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import {Provider} from 'react-redux'
+import configureStore from './store/configureStore';
+import { isLogin,startUserInformation } from "./action/userAction";
+import { startgetCustometdata } from "./action/customerAction";
+import { startGetProductdata } from "./action/productAction";
+import { startGetAllBills } from "./action/billAction";
+const store = configureStore();
+//console.log(store)
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  if(localStorage.getItem('token')){
+  store.dispatch(isLogin(true));
+  store.dispatch(startUserInformation());
+  store.dispatch(startgetCustometdata());
+  store.dispatch(startGetProductdata())
+  store.dispatch(startGetAllBills())
+  }
+ReactDOM.createRoot(document.getElementById('root'))
+.render(
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  

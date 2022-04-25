@@ -1,0 +1,50 @@
+.customer{
+    min-height: 85vh;
+}
+.table_body{
+  border: 1px solid gainsboro;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 50px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, lightgreen , lightblue);
+  
+}
+table{
+    font-size: 2rem;
+    font-family: 'self';
+    position: relative;
+    color: #fff;
+    
+}
+.btn{
+    font-size: 2rem;
+}
+.icon{
+    position: fixed;
+    right: 50%;
+    cursor: pointer;
+    margin-top: -30px;
+}
+.iconMinus{
+    margin-top: -10px;
+}
+
+.icon i{
+    font-size: 3rem;
+    padding: 10px;
+    background-color: lightcoral;
+    color: white; 
+    position: absolute;
+    top: 0.5rem;
+    border-radius: 40%;
+}
+
+@media screen and (max-width:516px){
+    .icon{
+       margin-top: -15px;
+    }
+    .iconMinus{
+        margin-top:20px;
+    }
+}
