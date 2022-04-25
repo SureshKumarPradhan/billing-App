@@ -47,7 +47,7 @@ const Register = (props) => {
         console.log(formdata);
         axios
           .post(
-            `http://dct-billing-app.herokuapp.com/api/users/register`,
+            `https://dct-billing-app.herokuapp.com/api/users/register`,
             formdata
           )
           .then((res) => {

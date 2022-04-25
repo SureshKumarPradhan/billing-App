@@ -1,7 +1,7 @@
 import axios from "axios"
 export const startAddProduct =(formdata,resetForm,handelToggle)=>{
     return (dispatch) => {
-    axios.post(' http://dct-billing-app.herokuapp.com/api/products',formdata,
+    axios.post(' https://dct-billing-app.herokuapp.com/api/products',formdata,
     {headers:{Authorization: "Bearer " + localStorage.getItem("token") }})
     .then(res=>{
         const result = res.data;
@@ -14,7 +14,7 @@ export const startAddProduct =(formdata,resetForm,handelToggle)=>{
 }
 export const startGetProductdata = ()=>{
     return(dispatch)=>{
-      axios.get('http://dct-billing-app.herokuapp.com/api/products',
+      axios.get('https://dct-billing-app.herokuapp.com/api/products',
       {headers:{Authorization: "Bearer " + localStorage.getItem("token") }})
       .then(res=>{
           const result = res.data;
@@ -29,7 +29,7 @@ export const startGetProductdata = ()=>{
 
 export const startDeleteProduct = (id) => {
     return (dispatch) => {
-        axios.delete(`http://dct-billing-app.herokuapp.com/api/products/${id}`,
+        axios.delete(`https://dct-billing-app.herokuapp.com/api/products/${id}`,
         {headers:{Authorization: "Bearer " + localStorage.getItem('token')}})
         .then(res=>{
             const result = res.data;
@@ -44,7 +44,7 @@ export const startDeleteProduct = (id) => {
 
 export const startEditProduct = (id,formData,resetForm,handelToggle) => {
   return (dispatch) => {
-      axios.put(`http://dct-billing-app.herokuapp.com/api/products/${id}`,formData,
+      axios.put(`https://dct-billing-app.herokuapp.com/api/products/${id}`,formData,
       {headers:{Authorization: "Bearer " + localStorage.getItem('token')}}
       )
       .then(res=>{
