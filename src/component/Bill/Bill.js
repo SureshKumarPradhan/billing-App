@@ -3,6 +3,7 @@ import BillForm from "./BillForm";
 import "./bill.css";
 import { useDispatch } from "react-redux";
 import BillTable from "./BillTable";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { startDeleteBill } from "../../action/billAction";
 
 const Bill = (props) => {
@@ -27,12 +28,16 @@ const Bill = (props) => {
         <div className="mb-5">
           {formToggle ? <BillForm handelFormToggle={handelFormToggle} /> : null}
         </div>
-        <div className={`text-center icon ${formToggle && "iconMinus"}`}>
-          <i
-            className={!formToggle ? `fas fa-plus` : `fas fa-minus`}
-            onClick={handelFormToggle}
-          ></i>
-        </div>
+        <div
+        className={`text-center icon ${formToggle && "iconMinus"}`}
+        onClick={handelFormToggle}
+      >
+        {!formToggle ? (
+          <FontAwesomeIcon icon="fa-plus" className="faplus" />
+        ) : (
+          <FontAwesomeIcon icon="fa-minus" className="faplus" />
+        )}
+      </div>
         <BillTable handeldelete={handeldelete} />
       </div>
     </>

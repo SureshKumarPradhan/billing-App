@@ -7,7 +7,7 @@ export const startLogin = (formdata, toHomePage) => {
       .then((res) => {
         if (res.data.errors) {
           dispatch(loginError(res.data.errors));
-        } else if (res.data.token) {
+        } else if (res.data.token) { 
           localStorage.setItem("token", res.data.token);
           toHomePage();
           dispatch(loginError(""));

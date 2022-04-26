@@ -10,7 +10,6 @@ import { startGetProductdata } from "./action/productAction";
 import { startGetAllBills } from "./action/billAction";
 const store = configureStore();
 //console.log(store)
-
   if(localStorage.getItem('token')){
   store.dispatch(isLogin(true));
   store.dispatch(startUserInformation());

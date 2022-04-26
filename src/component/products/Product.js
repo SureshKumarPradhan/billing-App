@@ -3,6 +3,7 @@ import Productform from "./ProductForm";
 import { useDispatch } from "react-redux";
 import { startDeleteProduct } from "../../action/productAction";
 import ProductTable from "./ProductTable";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../customears/customer.css";
 const Product = (props) => {
   const dispatch = useDispatch();
@@ -34,11 +35,15 @@ const Product = (props) => {
           />
         ) : null}
       </div>
-      <div className={`text-center icon ${formToggle && "iconMinus"}`}>
-        <i
-          className={!formToggle ? `fas fa-plus` : `fas fa-minus`}
-          onClick={handelFormToggle}
-        ></i>
+      <div
+        className={`text-center icon ${formToggle && "iconMinus"}`}
+        onClick={handelFormToggle}
+      >
+        {!formToggle ? (
+          <FontAwesomeIcon icon="fa-plus" className="faplus" />
+        ) : (
+          <FontAwesomeIcon icon="fa-minus" className="faplus" />
+        )}
       </div>
       <ProductTable handeldelete={handeldelete} handelEdit={handelEdit} />
     </div>
