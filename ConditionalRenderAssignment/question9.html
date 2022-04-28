@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display the fast element</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/babel-standalone@6.26.0/babel.js"
+    ></script>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+      const UserStatus = (props) => {
+        const { data } = props;
+        return (
+          <div>
+            {data.isLoggedIn ? (
+              <p>
+                {`${data.name} is currently `}
+                <strong>Logged in</strong>
+                {` the system.`}
+              </p>
+            ) : (
+              <p>
+                {`${data.name} is currently `} <strong>Not Logged in</strong>
+                {` the system.`}
+              </p>
+            )}
+          </div>
+        );
+      };
+      const App = () => {
+        const user1 = { id: 1, name: "adam", isLoggedIn: false };
+        const user2 = { id: 2, name: "steve", isLoggedIn: true };
+        return (
+          <div>
+            <h1>User Login Status</h1>
+            <UserStatus data={user1} />
+            <UserStatus data={user2} />
+          </div>
+        );
+      };
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>

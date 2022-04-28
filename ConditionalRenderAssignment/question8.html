@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display the fast element</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/babel-standalone@6.26.0/babel.js"
+    ></script>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+      const EvenOdd = (props) => {
+        const {text,color,number} = props
+        return (
+          <div>
+            <h1>{text} Number</h1>
+            <h2 style={{ color:color }}>{number}</h2>
+          </div>
+        );
+      };
+      const NumberColor = (props) => {
+        const { data } = props;
+        return (
+          <div>
+            {data % 2 === 0 ? (
+              <EvenOdd text="Even" color="red" number={data} />
+            ) : (
+              <EvenOdd text="Odd" color="yellow" number={data} />
+            )}
+          </div>
+        );
+      };
+      const App = () => {
+        const even = 10;
+        const odd = 11;
+        return (
+          <div>
+            <NumberColor data={even} />
+            <NumberColor data={odd} />
+          </div>
+        );
+      };
+
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>

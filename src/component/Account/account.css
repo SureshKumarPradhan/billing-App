@@ -1,26 +1,28 @@
 .account-top{
     background-color: whitesmoke;
     height: 92vh;
+    position: relative;
 }
 .account{
-     max-width: 600px;
-     padding-top: 10%;
-     
+     max-width: 60rem;
+     margin-top: 20%;
+     transform: translateX(50%);
+     transform: translateY(-50%);
 }
 .account img{
 max-width: 150px;
-margin-right: 2rem;
+
 max-height: 200px;
 }
 .account_body{
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
     border: 1px solid gray;
-    padding: 20px;
+    padding: 20px; 
     box-shadow: 5px 10px 5px gray;
     background-image: linear-gradient(to right, lightblue , lightgreen);
+    position: fixed;
 }
 .account_details{
     text-align: justify;
@@ -28,7 +30,11 @@ max-height: 200px;
 }
 @media screen and (max-width:516px){
     .account img{
-        max-width: 80px;
-        max-height: 80px;
+        max-width: 70px;
+        max-height: 70px;
         }
+        .account{
+            max-width: 300px;
+            margin-top: 50%;
+       }
 }

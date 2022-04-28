@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Display the fast element</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    const ArticlesIntro = (props) => {
+      const { data } = props;
+      let moreThan100 = "";
+      for (let i = 0; i < 100; i++) {
+        moreThan100 += data[i];
+      }
+      //console.log(moreThan100);
+      const showText = () => {
+        alert(data);
+      };
+      return (
+        <div>
+          {data.length < 100 ? (
+            <h3>{data}</h3>
+          ) : (
+            <h3>
+              {`${moreThan100} ...`}{" "}
+              <button onClick={showText}>Read more</button>
+            </h3>
+          )}
+          <hr/>
+        </div>
+      );
+    };
+    const App = () => {
+      const str2 = `React (also known as React.js or ReactJS) is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies.React can be used as a base in the development of single-page or mobile applications. However, React is only concerned with rendering data to the DOM, and so creating React applications usually requires the use of additional libraries for state management and routing. Redux and React Router are respective examples of such libraries`;
+      const str1 = "React is Awesome";
+      return(
+        <div>
+          <ArticlesIntro data={str1} />
+          <ArticlesIntro data={str2} />
+          </div>
+      )
+    };
+    ReactDOM.render(<App />, root);
+  </script>
+</body>
+
+</html>

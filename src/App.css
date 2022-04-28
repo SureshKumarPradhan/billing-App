@@ -57,7 +57,6 @@ html{
   /* Home component */ 
 
   .home {
-      text-align: center;
       display: flex;
       justify-content: center;
       background-color: whitesmoke;
@@ -91,16 +90,22 @@ html{
     color: #fff;
     text-decoration: none;
 }
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+    background-color: whitesmoke;
+}
 @media screen and (max-width:516px){
     html{
-        font-size: 4px;
+        font-size: 6px;
     } 
 } 
 @media screen and  (max-width: 1000px){
     .navbar .nav_ul{
        font-size: 2rem;
-    }
-    
+    }  
 }
 @media screen and  (max-width: 822px){
     .navbar .nav_ul {

@@ -33,7 +33,8 @@ const Login = (props) => {
       }}
     >
       {(formik) => (
-        <div className="container mt-5 p-5 form">
+        <div className="login">
+        <div className="container mt-5 p-5 form" >
           <Form>
           <div className="text-danger">{error && error}</div>
             <Textfield
@@ -55,6 +56,7 @@ const Login = (props) => {
               <NavLink to="/register">sign-up</NavLink>
             </button>
           </Form>
+        </div>
         </div>
       )}
     </Formik>

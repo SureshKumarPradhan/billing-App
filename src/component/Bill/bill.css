@@ -1,5 +1,6 @@
 .bills{
     height: 85vh;
+    margin-top: 10%;
 }
 .billdate select{
     font-size: 2rem;
@@ -13,7 +14,7 @@
 }
 .back{
     margin-right: 5px;
-}
+} 
 .showbill_body{
     height: 85vh;
 }

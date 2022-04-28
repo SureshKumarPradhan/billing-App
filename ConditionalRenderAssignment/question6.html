@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display the fast element</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/babel-standalone@6.26.0/babel.js"
+    ></script>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+      const UserInfo = (props) => {
+        const {data} = props;
+       return(
+         <div>
+          <h3>id -{data.id}</h3>
+          <h3>name -{data.name}</h3>
+          {data.email ? <h3>email -{data.email}</h3>:<h3>email -N/A</h3> }
+          {data.city ? <h3>city -{data.city}</h3>:<h3>city -N/A</h3> }
+          <hr/>
+          </div>
+       )
+      };
+      const App = () => {
+        const user1 = {
+          id: 1,
+          name: "user1",
+          email: "user1@gmail.com",
+          city: "bangalore",
+        };
+        const user2 = { id: 1, name: "user1", email: "", city: "" };
+
+        return(
+          <div>
+            <UserInfo data={user1}/>
+            <UserInfo data={user2}/>
+            </div>
+        )
+      };
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>

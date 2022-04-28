@@ -12,7 +12,7 @@ const Account = (props) => {
         <div className="container   account">
              <div className="account_body">
                  <img src={image} alt="profile image"/>
-                 <div className="account_details mt-4">
+                 <div className="account_details">
                      <h1>Name : {userData.username}</h1>
                      <h1>Business : {userData.businessName}</h1>
                      <h1>Address : {userData.address}</h1>

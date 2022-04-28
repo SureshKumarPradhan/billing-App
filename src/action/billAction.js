@@ -1,7 +1,7 @@
 import axios from "axios"
 export const startAddbill = (formdata,handelSave) => {
     return (dispatch) => {
-        axios.post(`https://dct-billing-app.herokuapp.com/api/bills`,formdata,
+        axios.post(`https://dct-pos-app.herokuapp.com/api/bills`,formdata,
         {headers: { Authorization: "Bearer " + localStorage.getItem("token")}})
         .then(res=>{
             const result = res.data;
@@ -19,7 +19,7 @@ export const startAddbill = (formdata,handelSave) => {
 }
  export const startGetAllBills = () => {
      return (dispatch) => {
-         axios.get(`https://dct-billing-app.herokuapp.com/api/bills`,
+         axios.get(`https://dct-pos-app.herokuapp.com/api/bills`,
          {headers: { Authorization: "Bearer " + localStorage.getItem("token")}})
         .then(res=>{
             const result = res.data;
@@ -37,7 +37,7 @@ export const startAddbill = (formdata,handelSave) => {
 
  export const startDeleteBill = (id) => {
      return (dispatch) => {
-        axios.delete(`https://dct-billing-app.herokuapp.com/api/bills/${id}`,
+        axios.delete(`https://dct-pos-app.herokuapp.com/api/bills/${id}`,
          {headers: { Authorization: "Bearer " + localStorage.getItem("token")}})
          .then(res=>{
              const result = res.data;
@@ -51,7 +51,7 @@ export const startAddbill = (formdata,handelSave) => {
 
  export const startGetBill = (id,goDetail) => {
      return (dispatch) => {
-        axios.get(`https://dct-billing-app.herokuapp.com/api/bills/${id}`,
+        axios.get(`https://dct-pos-app.herokuapp.com/api/bills/${id}`,
         {headers: { Authorization: "Bearer " + localStorage.getItem("token")}})
         .then(res=>{
             const result = res.data;

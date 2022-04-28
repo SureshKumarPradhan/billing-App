@@ -1,5 +1,6 @@
 .customer{
     min-height: 85vh;
+    margin-top: 10%;
 }
 .table_body{
   border: 1px solid gainsboro;
@@ -21,7 +22,7 @@ table{
     font-size: 2rem;
 }
 .icon{
-    position: fixed;
+    position: absolute;
     right: 50%;
     cursor: pointer;
     margin-top: -30px;

@@ -3,7 +3,7 @@ import axios from "axios";
 export const startLogin = (formdata, toHomePage) => {
   return (dispatch) => {
     axios
-      .post(`https://dct-billing-app.herokuapp.com/api/users/login`, formdata)
+      .post(`https://dct-pos-app.herokuapp.com/api/users/login`, formdata)
       .then((res) => {
         if (res.data.errors) {
           dispatch(loginError(res.data.errors));
@@ -24,7 +24,7 @@ export const startLogin = (formdata, toHomePage) => {
 export const startUserInformation = () => {
   return (dispatch) => {
     axios
-      .get(`https://dct-billing-app.herokuapp.com/api/users/account`, {
+      .get(`https://dct-pos-app.herokuapp.com/api/users/account`, {
         headers: { "Authorization": "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
