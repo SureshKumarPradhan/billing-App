@@ -51,7 +51,7 @@ const BillForm = (props) => {
     newFormValues[i][e.target.name] = e.target.value;
     setdynamicform(newFormValues);
   };
-  const handelSubmit = (e) => {
+  const handelSubmit = (e) => {   
     e.preventDefault();
 
     const formdata = {
